@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestria - Login</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1>Mestria</h1>
+    <h2>Entrar para acessar suas aulas</h2>
+
+    <form id="formLogin">
+        <input type="hidden" name="operacao" value="login">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <br>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <p id="mensagem"></p>
+    <p>Não possui uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

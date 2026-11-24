@@ -1,0 +1,465 @@
+/*css win98*/
+
+:root {
+    --desktop: #008080;
+    --prata: #c0c0c0;
+    --prata-claro: #dfdfdf;
+    --branco: #ffffff;
+    --cinza: #808080;
+    --preto: #000000;
+    --cinza-escuro: #404040;
+    --azul: #000080;
+    --azul-claro: #1084d0;
+    --dica: #ffffe1;
+    --fonte: "MS Sans Serif", Tahoma, "Segoe UI", Geneva, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: var(--azul);
+    color: var(--branco);
+}
+
+/* "area de trabalho" */
+
+html {
+    background-color: var(--desktop);
+}
+
+/* barra de tarefas */
+html::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    height: 34px;
+    background-color: var(--prata);
+    border-top: 2px solid var(--branco);
+    box-shadow: 0 -1px 0 var(--prata-claro);
+}
+
+
+/* window principal */
+
+body {
+    max-width: 1100px;
+    margin: 28px auto 62px;
+    padding: 0 0 22px;
+    background-color: var(--prata);
+    color: var(--preto);
+    font-family: var(--fonte);
+    font-size: 13px;
+    line-height: 1.5;
+    border: 1px solid;
+    border-color: var(--prata-claro) var(--preto) var(--preto) var(--prata-claro);
+    box-shadow:
+        inset -1px -1px var(--cinza),
+        inset 1px 1px var(--branco),
+        3px 3px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* window com formulário */
+body:has(form) {
+    max-width: 620px;
+}
+
+/* titulo */
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3px;
+    padding: 4px 4px 4px 8px;
+    background: linear-gradient(90deg, var(--azul), var(--azul-claro));
+    color: var(--branco);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+    text-align: left;
+}
+
+/* navegação */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px;
+    margin: 0 3px;
+    padding: 3px 2px;
+    border-bottom: 1px solid var(--cinza);
+    box-shadow: 0 1px 0 var(--branco);
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    color: var(--preto);
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+nav a img,
+nav button img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    image-rendering: pixelated;
+}
+
+nav a:hover {
+    border-color: var(--branco) var(--cinza) var(--cinza) var(--branco);
+}
+
+nav a:active {
+    border-color: var(--cinza) var(--branco) var(--branco) var(--cinza);
+    padding: 4px 9px 2px 11px;
+}
+
+/* sessão */
+
+h2 {
+    margin: 20px 20px 14px;
+    padding-bottom: 6px;
+    color: var(--preto);
+    font-size: 17px;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: none;
+    border-bottom: 2px groove var(--prata-claro);
+}
+
+body:has(form) h2 {
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    margin: 0;
+    color: var(--branco);
+    font-size: 13px;
+}
+
+/* formularios*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
+    max-width: 460px;
+    margin: 14px auto 0;
+    padding: 18px 20px 20px;
+    border: 2px groove var(--prata-claro);
+}
+
+form br {
+    display: none;
+}
+
+label {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    color: var(--preto);
+    font-weight: normal;
+}
+
+form label:first-of-type {
+    margin-top: 0;
+}
+
+/* aspecto de profundidade nas "caixas" */
+
+input {
+    width: 100%;
+    padding: 5px 6px;
+    background-color: var(--branco);
+    color: var(--preto);
+    border: 1px solid;
+    border-color: var(--cinza) var(--branco) var(--branco) var(--cinza);
+    border-radius: 0;
+    box-shadow: inset 1px 1px var(--cinza-escuro), inset -1px -1px var(--prata-claro);
+    font-family: var(--fonte);
+    font-size: 13px;
+    outline: none;
+}
+
+input:focus {
+    background-color: #ffffee;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+/* aspecto de profundidade nos butões */
+
+button,
+#resultado a[href*="editar_aula"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 84px;
+    margin-top: 14px;
+    padding: 5px 16px;
+    background-color: var(--prata);
+    color: var(--preto);
+    border: 1px solid;
+    border-color: var(--branco) var(--preto) var(--preto) var(--branco);
+    border-radius: 0;
+    box-shadow: inset -1px -1px var(--cinza), inset 1px 1px var(--prata-claro);
+    font-family: var(--fonte);
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:active,
+#resultado a[href*="editar_aula"]:active {
+    border-color: var(--preto) var(--branco) var(--branco) var(--preto);
+    box-shadow: inset 1px 1px var(--cinza), inset -1px -1px var(--prata-claro);
+    padding: 6px 15px 4px 17px;
+}
+
+button:focus-visible,
+#resultado a[href*="editar_aula"]:focus-visible {
+    outline: 1px dotted var(--preto);
+    outline-offset: -5px;
+}
+
+/* botão padrão do formulário */
+form button[type="submit"] {
+    font-weight: bold;
+    outline: 1px solid var(--preto);
+    outline-offset: 0;
+}
+
+form button[type="submit"]:focus-visible {
+    outline: 1px dotted var(--preto);
+    outline-offset: -5px;
+    box-shadow: 0 0 0 1px var(--preto), inset -1px -1px var(--cinza), inset 1px 1px var(--prata-claro);
+}
+
+/* sair */
+#sair {
+    min-width: 0;
+    margin: 0 0 0 auto;
+    padding: 3px 12px;
+}
+
+#sair:active {
+    padding: 4px 11px 2px 13px;
+}
+
+/* EXcluir: texto vermelho escuro */
+[data-excluir],
+[data-cancelar],
+#excluirConta {
+    color: #800000;
+}
+
+#excluirConta {
+    margin-top: 8px;
+}
+
+/* aulas e matriculas */
+
+#resultado {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 22px;
+    margin: 0 20px;
+}
+
+#resultado > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    gap: 0 6px;
+    padding: 0 12px 14px;
+    background-color: var(--prata);
+    border: 1px solid;
+    border-color: var(--prata-claro) var(--preto) var(--preto) var(--prata-claro);
+    box-shadow:
+        inset -1px -1px var(--cinza),
+        inset 1px 1px var(--branco),
+        2px 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* barra de título da janelinha */
+#resultado > div h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    width: calc(100% + 24px);
+    margin: 3px -12px 12px;
+    padding: 3px 4px 3px 8px;
+    background: linear-gradient(90deg, var(--azul), var(--azul-claro));
+    color: var(--branco);
+    font-size: 13px;
+    line-height: 16px;
+}
+
+#resultado > div h3::after {
+    content: "\00D7";
+    width: 16px;
+    height: 14px;
+    background-color: var(--prata);
+    color: var(--preto);
+    border: 1px solid;
+    border-color: var(--branco) var(--preto) var(--preto) var(--branco);
+    box-shadow: inset -1px -1px var(--cinza);
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 11px;
+    text-align: center;
+}
+
+/* informações */
+#resultado > div p {
+    flex: 0 0 100%;
+    margin: 0;
+    padding: 3px 0;
+    color: var(--preto);
+    border-bottom: 1px dotted var(--cinza);
+}
+
+#resultado > div p:last-of-type {
+    margin-bottom: 2px;
+}
+
+#resultado hr {
+    display: none;
+}
+
+/* ordem dos botões */
+#resultado button[data-matricular],
+#resultado button[data-cancelar] {
+    order: 1;
+}
+
+#resultado button[data-excluir] {
+    order: 2;
+}
+
+#resultado a[href*="editar_aula"] {
+    order: 3;
+}
+
+#resultado button,
+#resultado a[href*="editar_aula"] {
+    min-width: 0;
+    margin-top: 12px;
+    padding: 5px 12px;
+}
+
+#resultado button:active,
+#resultado a[href*="editar_aula"]:active {
+    padding: 6px 11px 4px 13px;
+}
+
+/* mensagens na barra de status */
+
+#mensagem {
+    max-width: 460px;
+    margin: 18px auto 0;
+    padding: 6px 10px;
+    background-color: var(--dica);
+    color: var(--preto);
+    border: 1px solid var(--preto);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+    font-weight: normal;
+    text-align: center;
+}
+
+#mensagem:empty {
+    display: none;
+}
+
+/* links */
+
+a {
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+nav a,
+nav a:visited,
+nav a:hover,
+#resultado a[href*="editar_aula"],
+#resultado a[href*="editar_aula"]:visited,
+#resultado a[href*="editar_aula"]:hover {
+    color: var(--preto);
+    text-decoration: none;
+}
+
+body > a {
+    display: block;
+    width: fit-content;
+    margin: 16px auto 0;
+}
+
+body > p:not(#mensagem) {
+    margin: 16px 20px 0;
+    text-align: center;
+}
+
+
+
+/* responsividade */
+
+@media (max-width: 700px) {
+    body,
+    body:has(form) {
+        max-width: none;
+        margin: 8px 8px 50px;
+    }
+
+    #resultado {
+        grid-template-columns: 1fr;
+        margin: 0 12px;
+    }
+
+    h2 {
+        margin: 16px 12px 12px;
+        font-size: 16px;
+    }
+
+    body:has(form) h2 {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    form {
+        width: calc(100% - 24px);
+        padding: 14px;
+    }
+
+    #mensagem {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
